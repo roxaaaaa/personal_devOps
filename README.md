@@ -1,1 +1,1 @@
-The project language is Python. User's goal is to guess Roksolana's age.
+This project was created to implement best DevOps techniques 
