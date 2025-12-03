@@ -16,6 +16,7 @@ import sys
 TARGET_AGE = 19
 MAX_ATTEMPTS = 3
 
+
 def start_game(target: int, attempts: int):
     """
     Starts the main game loop.
@@ -31,25 +32,24 @@ def start_game(target: int, attempts: int):
         None: The function exits the program via sys.exit() upon success
               or prints a failure message when the loop finishes.
     """
-    
     print("Hello, my name is Roksolana.")
     print(f"You have {attempts} attempts to guess my age.")
 
-    #Loop through the range of allowed attempts (1 to attempts)
+# Loop through the range of allowed attempts (1 to attempts)
     for attempt in range(1, attempts + 1):
         try:
-            # f-strings are used here for dynamic prompt generation
-            user_input = input(f"\n[Attempt {attempt}/{attempts}] Guess my age: ")
+            prompt = f"\n[Attempt {attempt}/{attempts}] Guess my age: "
+            user_input = input(prompt)
             guess = int(user_input)
         except ValueError:
-            # This block runs if the user types text (e.g., "twenty")
-            print("Invalid input! You wasted an attempt. Please enter a number.")
+            print("Invalid input! You wasted an attempt. "
+                  "Please enter a number.")
             continue
 
         # Logic to check if the guess is correct, high, or low
         if guess == target:
             print(" That's right! You verified my identity.")
-            sys.exit(0) # Exit code 0 means "Success"
+            sys.exit(0)
         elif guess < target:
             print("Too low! I'm older than that.")
         else:
@@ -58,10 +58,10 @@ def start_game(target: int, attempts: int):
     # If the loop finishes without a correct guess
     print("\n Game Over. Run the script to try again.")
 
+
 if __name__ == "__main__":
     """
     Main Guard.
-    
     Ensures that start_game() only runs if this file is executed directly,
     not if it is imported as a module in another script.
     """
