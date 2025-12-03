@@ -48,7 +48,7 @@ def start_game(target: int, attempts: int):
 
         # Logic to check if the guess is correct, high, or low
         if guess == target:
-            print("🎉 That's right! You verified my identity.")
+            print(" That's right! You verified my identity.")
             sys.exit(0) # Exit code 0 means "Success"
         elif guess < target:
             print("Too low! I'm older than that.")
