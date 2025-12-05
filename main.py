@@ -24,7 +24,7 @@ logging.basicConfig(
 )
 
 MAX_ATTEMPTS = 3
-TARGET_AGE = 19 
+TARGET_AGE = 19
 
 
 def start_game(target: int, attempts: int):
