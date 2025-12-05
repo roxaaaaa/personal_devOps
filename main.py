@@ -11,7 +11,6 @@ Date: 2023-10-27
 """
 
 import sys
-<<<<<<< HEAD
 import logging
 
 
@@ -23,12 +22,9 @@ logging.basicConfig(
     level=logging.INFO,               # Log INFO and above
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
-=======
->>>>>>> 57b876ec415be483e98091f2c14b87ad4f3163d2
 
-
-TARGET_AGE = 19
 MAX_ATTEMPTS = 3
+TARGET_AGE = 19 
 
 
 def start_game(target: int, attempts: int):
@@ -49,8 +45,8 @@ def start_game(target: int, attempts: int):
     print("Hello, my name is Roksolana.")
     print(f"You have {attempts} attempts to guess my age.")
 
-<<<<<<< HEAD
-    logging.info("Game started | Target = %d | Attempts = %d", target, attempts)
+    logging.info(
+        "Game started with target age %d and %d attempts", target, attempts)
 
 # Loop through the range of allowed attempts (1 to attempts)
     for attempt in range(1, attempts + 1):
@@ -65,28 +61,15 @@ def start_game(target: int, attempts: int):
 
             guess = int(user_input)
 
-
         except ValueError:
             print("Invalid input! You wasted an attempt. "
                   "Please enter a number.")
             logging.warning("Invalid input (not an int): %s", user_input)
-=======
-# Loop through the range of allowed attempts (1 to attempts)
-    for attempt in range(1, attempts + 1):
-        try:
-            prompt = f"\n[Attempt {attempt}/{attempts}] Guess my age: "
-            user_input = input(prompt)
-            guess = int(user_input)
-        except ValueError:
-            print("Invalid input! You wasted an attempt. "
-                  "Please enter a number.")
->>>>>>> 57b876ec415be483e98091f2c14b87ad4f3163d2
             continue
 
         # Logic to check if the guess is correct, high, or low
         if guess == target:
             print(" That's right! You verified my identity.")
-<<<<<<< HEAD
             logging.info("Correct guess on attempt %d", attempt)
             sys.exit(0)
         elif guess < target:
@@ -99,16 +82,6 @@ def start_game(target: int, attempts: int):
     # If the loop finishes without a correct guess
     print("\n Game Over. Run the script to try again.")
     logging.info("Game over. User failed to guess the age.")
-=======
-            sys.exit(0)
-        elif guess < target:
-            print("Too low! I'm older than that.")
-        else:
-            print("Too high! I'm younger than that.")
-
-    # If the loop finishes without a correct guess
-    print("\n Game Over. Run the script to try again.")
->>>>>>> 57b876ec415be483e98091f2c14b87ad4f3163d2
 
 
 if __name__ == "__main__":
