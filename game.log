@@ -1,0 +1,7 @@
+2025-12-05 13:13:38,795 - INFO - Game started | Target = 19 | Attempts = 3
+2025-12-05 13:13:48,879 - INFO - User input received: ABS
+2025-12-05 13:13:48,880 - WARNING - Invalid input (not an int): ABS
+2025-12-05 13:14:04,956 - INFO - User input received: 23
+2025-12-05 13:14:04,991 - INFO - User guessed too high: 23
+2025-12-05 13:14:07,437 - INFO - User input received: 19
+2025-12-05 13:14:07,437 - INFO - Correct guess on attempt 3

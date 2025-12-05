@@ -1,0 +1,55 @@
+<<<<<<< HEAD
+name: Python Unit Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Run unittest
+        run: |
+          echo "::debug::Starting unit tests"
+          python -m unittest discover -v
+          echo "::debug::Unit tests finished"
+=======
+name: Python Unit Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+
+      - name: Run unittest
+        run: python -m unittest discover -v
+
+>>>>>>> 57b876ec415be483e98091f2c14b87ad4f3163d2
